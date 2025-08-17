@@ -1,53 +1,35 @@
-📱 AI-Powered Mobile Chat Game Prototype
-
-Developer: Sai Prasanth Mantha
-
 🌟 Overview
 
-This project is a real-time chat game prototype where humans and AI bots interact inside game lobbies.
+This project is a real-time multiplayer chat game where humans and AI bots interact inside lobbies.
 It demonstrates:
-
-Real-time messaging with Socket.IO
-
-Lobby creation/joining (public & private)
-
-Mixed Human + AI chat with streaming AI replies
-
-Lightweight game events (trivia injection)
-
-Mobile-ready Flutter client packaged as APK
+✅ Real-time messaging with Socket.IO
+✅ Lobby management (create/join public or private rooms)
+✅ Mixed Human + AI chat with streaming GPT replies
+✅ Lightweight game events (e.g., trivia every 5 messages)
+✅ Mobile-ready Flutter app packaged as APK
 
 ✨ Features
 
-🔹 Home Screen → See all active lobbies with participant counts
-
+🔹 Home Screen → View all active lobbies with live participant counts
 🔹 Lobby Creation → Create public/private lobbies with optional passwords
-
-🔹 Lobby Chat → Real-time human + AI conversation
-
-🔹 AI Bot → Replies in ~2s, streams content token-by-token
-
-🔹 Game Loop → Trivia question every 5 messages
-
-🔹 System Events → Join/leave notifications
+🔹 Lobby Chat → Real-time human + AI conversations
+🔹 AI Bot 🤖 → Responds in ~2s, streams reply token-by-token
+🔹 Game Loop 🎮 → Trivia question injected every 5 messages
+🔹 System Events 📢 → Notifications when users join/leave
 
 🏗 Architecture
-<img width="1053" height="188" alt="ai_chat_game_architecture_detailed" src="https://github.com/user-attachments/assets/3ecde36e-489c-4b79-9cd3-a9dc0c3afc5e" />
+<img width="1053" height="188" alt="ai_chat_game_architecture_detailed" src="https://github.com/user-attachments/assets/fa1316dd-c4c6-424e-8c89-7eee22c8a8ef" />
 
-Workflow
+🔄 Workflow
 
-User connects to Node.js server via Socket.IO (ngrok tunnel).
-
-Server manages lobbies, chat, and broadcasts events.
-
-On each message, server calls OpenAI GPT API for AI bot reply.
-
-AI bot streams tokens → sent back to Flutter client in real-time.
-
-Every 5th message → trivia event injected.
+1️⃣ Client (Flutter app) connects to server via Socket.IO (ngrok tunnel)
+2️⃣ Server (Node.js) manages lobbies, chat, and event broadcasting
+3️⃣ On message → server calls OpenAI GPT API for AI reply
+4️⃣ AI bot replies streamed live into lobby chat
+5️⃣ Every 5th message → Trivia event injected
 
 ⚙️ Tech Stack
-Frontend (Flutter Client)
+🎨 Frontend (Flutter)
 
 Flutter SDK (3.x)
 
@@ -55,7 +37,7 @@ socket_io_client (WebSocket client)
 
 Material UI
 
-Backend (Node.js Server)
+🖥 Backend (Node.js)
 
 Node.js 18+
 
@@ -65,7 +47,7 @@ Socket.IO
 
 OpenAI SDK
 
-ngrok
+ngrok (for tunneling)
 
 🚀 Setup & Run Instructions
 🔹 1. Clone Repository
@@ -77,7 +59,7 @@ cd server
 npm install
 
 
-Create .env in /server/:
+Create .env inside /server/:
 
 OPENAI_API_KEY=your_openai_api_key
 
@@ -87,21 +69,21 @@ Start server:
 node server.js
 
 
-✅ You should see: ✅ Server running on port 3000
+✅ Output: Server running on port 3000
 
-Expose server with ngrok:
+Expose with ngrok:
 
 ngrok http 3000
 
 
-Copy the HTTPS URL (e.g. https://46b13e416632.ngrok-free.app).
+👉 Copy HTTPS URL (example: https://46b13e416632.ngrok-free.app)
 
 🔹 3. Frontend Setup (Flutter)
 cd client
 flutter pub get
 
 
-Open lib/main.dart and update:
+Update lib/main.dart:
 
 serverUrl: "https://<your-ngrok-url>"
 
@@ -111,59 +93,50 @@ Run on emulator:
 flutter run
 
 
-Or build APK:
+Build APK:
 
 flutter build apk --release
 
 
-APK will be in:
-
+📂 APK Location:
 client/build/app/outputs/flutter-apk/app-release.apk
 
 🔹 4. Connect & Test
 
-Launch the app on emulator or phone.
+Launch app → Home screen shows lobbies
 
-Home screen shows lobbies list (auto-updates).
-
-Tap ➕ to create lobby → enter Lobby ID.
+Tap ➕ → Create Lobby (public/private)
 
 Inside chat:
 
-Send message → AI replies in ~2s.
+Send message → 🤖 AI responds in ~2s
 
-After 5 messages → trivia event appears.
+After 5 messages → 🎮 Trivia event appears
 
-Open another emulator/phone to join same lobby → test multiplayer.
+Open another device/emulator → test multiplayer
 
 📦 Deliverables
 
 ✅ Signed APK (Android 10+)
-
 ✅ Source repo (this GitHub)
-
-✅ Documentation (this README + diagrams in /docs/)
-
+✅ Documentation (README + diagrams in /docs/)
 ✅ Demo video (screen recording with voice-over)
 
 ⚠️ Known Limitations
 
-Single AI bot per lobby
-
-Stateless AI (no long-term context memory)
-
-In-memory server state (resets on restart)
-
-Simple UI (minimal, not production styled)
+⚡ Only 1 AI bot per lobby
+⚡ AI is stateless (no memory across chats)
+⚡ Server state is in-memory (resets on restart)
+⚡ UI is minimal (MVP style)
 
 🔮 Future Work
 
-Persistent DB (MongoDB/Postgres)
+🔹 Add persistent DB (MongoDB/Postgres)
+🔹 Support multiple AI bots with personalities
+🔹 Richer gameplay loops (polls, scoring, mini-games)
+🔹 Add authentication & persistent profiles
+🔹 Improved UI/UX (avatars, themes, animations)
 
-Multiple AI bots with personalities
+🎥 Demo Video → [Link to YouTube/Google Drive once uploaded]
 
-Richer gameplay loops (polls, votes, scoring)
-
-Authentication & user profiles
-
-Better UI/UX (avatars, themes, notifications)
+📂 APK Download → [Link or GitHub Releases]
