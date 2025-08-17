@@ -23,7 +23,10 @@ It demonstrates:
 ---
 
 ## 🏗 Architecture
-![Architecture Diagram](https://github.com/user-attachments/assets/3ecde36e-489c-4b79-9cd3-a9dc0c3afc5e)
+
+
+<img width="1053" height="188" alt="ai_chat_game_architecture_detailed" src="https://github.com/user-attachments/assets/3d159013-b3a3-4e46-9761-ca224b98779e" />
+
 
 ### 🔄 Workflow
 1. **Client (Flutter app)** connects to server via Socket.IO (ngrok tunnel)  
@@ -173,4 +176,5 @@ flutter build apk --release
 "# AI-Mobile-Chat-Bot-Game" 
 "# AI-Mobile-Chat-Bot-Game" 
 "# AI-Mobile-Chat-Bot-Game" 
+
 
