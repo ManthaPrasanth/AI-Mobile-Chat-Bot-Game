@@ -1,5 +1,3 @@
-Here’s a polished `README.md` draft you can use directly in your repo:
-
 ````markdown
 # 🤖🎮 AI Chat Game Prototype
 
@@ -175,3 +173,4 @@ flutter build apk --release
 "# AI-Mobile-Chat-Bot-Game" 
 "# AI-Mobile-Chat-Bot-Game" 
 "# AI-Mobile-Chat-Bot-Game" 
+
